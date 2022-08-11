@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const { default: axios } = require("axios");
 
 const Discord = require("discord.js");
@@ -283,6 +285,4 @@ client.on("message", async (message) => {
     }
 });
 
-client.login(
-    "OTcxMjM0MTI2NDYyMDc0OTYw.GgCbwe._Sr-kq6OAu5px6o3JIbcBvguJickrCNUgBaJj8"
-);
+client.login(process.env.TOKEN);
