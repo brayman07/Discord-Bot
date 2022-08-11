@@ -283,4 +283,6 @@ client.on("message", async (message) => {
     }
 });
 
-client.login("OTcxMjM0MTI2NDYyMDc0OTYw.YnHiRA.h1qLZIbqnxEBqz0H4jI4CaSYLnU");
+client.login(
+    "OTcxMjM0MTI2NDYyMDc0OTYw.GgCbwe._Sr-kq6OAu5px6o3JIbcBvguJickrCNUgBaJj8"
+);
