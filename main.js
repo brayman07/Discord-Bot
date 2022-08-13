@@ -19,7 +19,7 @@ client.once("ready", () => {
 client.on("message", async (message) => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     if (command === "whodowekick") {
@@ -127,17 +127,17 @@ client.on("message", async (message) => {
             message.channel.send("Error");
         }
     } else if (command === "spam") {
-        if (message.author.tag != "brayman07#6422") {
-            message.channel.send("You don't have permission to do that");
+        if ((message.author.tag = "brayman07#6422")) {
+            let times = args[1];
+            for (var i = 0; i < times; i++) message.channel.send(`${args[0]}`);
             return;
+        } else if ((message.author.tag = "Proofy2K#1867")) {
+            let times = args[1];
+            for (var i = 0; i < times; i++) message.channel.send(`${args[0]}`);
+            return;
+        } else {
+            message.channel.send("You don't have permission to do that");
         }
-        if (!args.length) {
-            return message.channel.send(
-                `You didn't provide any arguments, ${message.author}!`
-            );
-        }
-
-        for (var i = 0; i < 15; i++) message.channel.send(`${args}`);
     } else if (command == "cause-tonight") {
         message.channel.send(
             "The best thing 'bout tonight's that we're not fighting" +
@@ -271,7 +271,7 @@ client.on("message", async (message) => {
 
         let weatherValue = await getWeather();
         message.channel.send(
-            "The Temperature in " +
+            "The temperature in " +
                 `${weatherValue.name}` +
                 " is " +
                 `${weatherValue.main.temp}` +
